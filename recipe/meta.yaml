@@ -1,5 +1,5 @@
 {% set name = "sardem" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sardem-{{ version }}.tar.gz
-  sha256: abee1d7e6e3d14e4df0c86ca1a41136ab1bd0fcbf9baa22539daf5550f896c80
+  sha256: 56ec54182144dc6517c07cd6bf218e5202ca2edfd01a416f4093e7a2beff8b05
 
 build:
   entry_points:
