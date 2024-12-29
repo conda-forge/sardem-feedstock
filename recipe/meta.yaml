@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sardem-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sardem-{{ version }}.tar.gz
   sha256: fc39ffca40e1facfd415016159b8122dfdbf0ab28ebf8d90a240b9fe7039ce32
 
 build:
@@ -14,15 +14,15 @@ build:
     - sardem=sardem.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - requests
 
 test:
@@ -33,6 +33,7 @@ test:
     - sardem --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/scottstanie/sardem
